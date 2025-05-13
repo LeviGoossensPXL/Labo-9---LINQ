@@ -5,8 +5,8 @@
     <StackPanel Margin="10">
         <WrapPanel>
             <Button Content="Toon alle studenten" Margin="5" Click="Button_Click"/>
-            <Button Content="Studenten geslaagd (>12)" Margin="5"/>
-            <Button Content="Gesorteerd op voornaam" Margin="5"/>
+            <Button Content="Studenten geslaagd (>12)" Margin="5" Click="Button_Click_1"/>
+            <Button Content="Gesorteerd op voornaam" Margin="5" Click="Button_Click_2"/>
             <Button Content="Aantal per departement" Margin="5"/>
             <Button Content="Samenvatting" Margin="5"/>
             <Button Content="Aantal departementen" Margin="5"/>

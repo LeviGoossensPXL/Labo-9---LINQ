@@ -8,6 +8,9 @@ namespace StudentScores.Data
 
         public Student[] AllStudents => _students.ToArray();
 
+        public List<Student> PassedStudents => _students.Where(s => s.Grade >= 10).ToList();
+        public IEnumerable<Student> PassedStudents1 => _students.Where(s => s.Grade >= 10);
+
         public StudentStore()
         {
             _students = new List<Student>

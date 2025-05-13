@@ -18,5 +18,10 @@ namespace StudentScores
         {
             resultListBox.ItemsSource = _store.AllStudents;
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            resultListBox.ItemsSource = _store.PassedStudents;
+        }
     }
 }
