@@ -6,6 +6,8 @@ namespace StudentScores.Data
     {
         private List<Student> _students;
 
+        public Student[] AllStudents => _students.ToArray();
+
         public StudentStore()
         {
             _students = new List<Student>
