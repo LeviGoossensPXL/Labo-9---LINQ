@@ -76,11 +76,16 @@ namespace StudentScores.Data
                 .ToList();
         }
 
-        public List<Student> StudentsGroupedByDepartment()
+        public List<DepartmentSummary> StudentsGroupedByDepartment()
         {
             return _students
                 .GroupBy(s => s.Department)
-                .SelectMany(g => g)
+                .Select(g => new DepartmentSummary 
+                { 
+                    Department = g.Key,
+                    NumberOfStudents = g.Count(),
+                    MaxGrade = g.Max(s => s.Grade) 
+                })
                 .ToList();
         }
     }
