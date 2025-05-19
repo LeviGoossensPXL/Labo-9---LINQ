@@ -23,5 +23,10 @@ namespace StudentScores
         {
             resultListBox.ItemsSource = _store.PassedStudents;
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            resultListBox.ItemsSource = _store.StudentsOrderedByName();
+        }
     }
 }

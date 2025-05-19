@@ -8,8 +8,10 @@ namespace StudentScores.Data
 
         public Student[] AllStudents => _students.ToArray();
 
-        public List<Student> PassedStudents => _students.Where(s => s.Grade >= 10).ToList();
-        public IEnumerable<Student> PassedStudents1 => _students.Where(s => s.Grade >= 10);
+        //public List<Student> PassedStudents => _students.Where(s => s.Grade >= 10).ToList();
+        public IEnumerable<Student> PassedStudents => _students.Where(s => s.Grade >= 10);
+
+
 
         public StudentStore()
         {
@@ -68,5 +70,12 @@ namespace StudentScores.Data
                 };
         }
 
+        public List<Student> StudentsOrderedByName()
+        {
+            return _students
+                .OrderBy(s => s.FirstName)
+                .ThenBy(s => s.LastName)
+                .ToList();
+        }
     }
 }
