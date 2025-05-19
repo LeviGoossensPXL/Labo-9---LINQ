@@ -99,5 +99,13 @@ namespace StudentScores.Data
                 AvgScore = _students.Average(s => s.Grade)
             };
         }
+        
+        public int GetDepartmentCount()
+        {
+            return _students
+                .Select(s => s.Department)
+                .Distinct()
+                .Count();
+        }
     }
 }

@@ -44,5 +44,10 @@ namespace StudentScores
                 $" - maximum score: {generalSummary.MaxScore}" +
                 $" - gemiddelde score: {generalSummary.AvgScore}");
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"het aantal departementen: {_store.GetDepartmentCount()}");
+        }
     }
 }
