@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using StudentScores.Data;
+using StudentScores.Entities;
 
 namespace StudentScores
 {
@@ -32,6 +33,12 @@ namespace StudentScores
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             resultListBox.ItemsSource = _store.StudentsGroupedByDepartment();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            GeneralSummary generalSummary = _store.GetGeneralSummary();
+            MessageBox.Show($"{generalSummary.TotalStudentsCount} - {generalSummary.MinScore} - {generalSummary.MaxScore} - {generalSummary.AvgScore}");
         }
     }
 }

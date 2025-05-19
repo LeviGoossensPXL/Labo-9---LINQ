@@ -88,5 +88,16 @@ namespace StudentScores.Data
                 })
                 .ToList();
         }
+
+        public GeneralSummary GetGeneralSummary()
+        {
+            return new GeneralSummary
+            {
+                TotalStudentsCount = _students.Count,
+                MinScore = _students.Min(s => s.Grade),
+                MaxScore = _students.Max(s => s.Grade),
+                AvgScore = _students.Average(s => s.Grade)
+            };
+        }
     }
 }
