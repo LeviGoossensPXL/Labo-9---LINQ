@@ -8,10 +8,8 @@ namespace StudentScores.Data
 
         public Student[] AllStudents => _students.ToArray();
 
-        //public List<Student> PassedStudents => _students.Where(s => s.Grade >= 10).ToList();
+        //public List<Student> PassedStudents => _students.Where(s => s.Grade >= 10).ToList(); // no lazy evaluation
         public IEnumerable<Student> PassedStudents => _students.Where(s => s.Grade >= 10);
-
-
 
         public StudentStore()
         {
@@ -75,6 +73,14 @@ namespace StudentScores.Data
             return _students
                 .OrderBy(s => s.FirstName)
                 .ThenBy(s => s.LastName)
+                .ToList();
+        }
+
+        public List<Student> StudentsGroupedByDepartment()
+        {
+            return _students
+                .GroupBy(s => s.Department)
+                .SelectMany(g => g)
                 .ToList();
         }
     }

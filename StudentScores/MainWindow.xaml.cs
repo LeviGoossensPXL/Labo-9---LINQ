@@ -28,5 +28,10 @@ namespace StudentScores
         {
             resultListBox.ItemsSource = _store.StudentsOrderedByName();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            resultListBox.ItemsSource = _store.StudentsGroupedByDepartment();
+        }
     }
 }
