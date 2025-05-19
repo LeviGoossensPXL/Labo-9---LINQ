@@ -38,7 +38,11 @@ namespace StudentScores
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             GeneralSummary generalSummary = _store.GetGeneralSummary();
-            MessageBox.Show($"{generalSummary.TotalStudentsCount} - {generalSummary.MinScore} - {generalSummary.MaxScore} - {generalSummary.AvgScore}");
+            MessageBox.Show(
+                $"het totaal aantal student: {generalSummary.TotalStudentsCount}" +
+                $" - minimum score: {generalSummary.MinScore}" +
+                $" - maximum score: {generalSummary.MaxScore}" +
+                $" - gemiddelde score: {generalSummary.AvgScore}");
         }
     }
 }
